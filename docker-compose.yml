@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+    # Create backend container
+  backend:
+    build: ./
+    ports:
+      - "4000:4000"
+    container_name: stripestore-backend-docker
+    restart: always
+    links:
+      - frontend
+
+  # Create frontend container
+  frontend: # Name of our service
+    build: ./stripestore # path to dockerfile
+    ports: # Port binding to host from docker container
+      - "3000:3000" # Bind port 3000 of host to 3000 of container
+    container_name: stripestore-frontend-docker
+    restart: always # What to do if container crashes
