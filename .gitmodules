@@ -1,0 +1,3 @@
+[submodule "stripestore"]
+	path = stripestore
+	url = https://github.com/brthomiu/Online-Storefront
