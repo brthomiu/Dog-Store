@@ -10,7 +10,7 @@ Online storefront created with React, Node, Express, and Stripe.
 
 ## Frontend
 
-The Dog Store storefront frontend for the end userbase, using basic React Bootstrap components.
+Dog Store storefront frontend for the end userbase, using basic React Bootstrap components.
 
 The main page is dynamically rendered from an array of dogs mapped to product cards.
 
