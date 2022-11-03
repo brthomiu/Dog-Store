@@ -1,5 +1,5 @@
 import { Button, Navbar, Modal } from "react-bootstrap";
-import { useState, useContext } from "react";
+import { useState, useContext, useCallback } from "react";
 import { CartContext } from "../cartContext";
 import CartProduct from "./CartProduct";
 
@@ -9,6 +9,7 @@ const NavbarComponent = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  //////// This is the checkout function that sends the cart to Stripe when the backend is running
   const checkout = async () => {
     await fetch("http://localhost:4000/checkout", {
       method: "POST",
@@ -35,7 +36,7 @@ const NavbarComponent = () => {
   return (
     <>
       <Navbar expand="sm">
-        <Navbar.Brand hred="/">Ecommerce Store</Navbar.Brand>
+        <Navbar.Brand hred="/">Dogs4Sale.com</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Button onClick={handleShow}>Cart ({productsCount} Items)</Button>
@@ -54,15 +55,15 @@ const NavbarComponent = () => {
                   quantity={currentProduct.quantity}
                 ></CartProduct>
               ))}
-              <h1>Total: ${cart.getTotalCost().toFixed(2)}</h1>
-              <Button variant="success" onClick={checkout}>
+              <h1 className="p-2">Total: ${cart.getTotalCost().toFixed(2)}</h1>
+              <Button className="m-2" variant="success" onClick={checkout}>
                 Checkout
               </Button>
             </>
           ) : (
             <>
-              <p>Your cart is empty.</p>
-              <h1>Total: ${cart.getTotalCost().toFixed(2)}</h1>
+              <p className="p-2">Your cart is empty.</p>
+              <h1 className="m-2">Total: ${cart.getTotalCost().toFixed(2)}</h1>
             </>
           )}
         </Modal.Body>

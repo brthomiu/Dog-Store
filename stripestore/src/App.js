@@ -7,22 +7,26 @@ import Cancel from "./pages/Cancel";
 import Store from "./pages/Store";
 import Success from "./pages/Success";
 import { CartProvider } from "./cartContext";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    document.title = "Dogs4Sale";  
+  }, []);
+  
   return (
-    <CartProvider>  
+    <CartProvider>
       <Container>
         <NavbarComponent />
         <BrowserRouter>
           <Routes>
             <Route index element={<Store />} />
             <Route path="success" element={<Success />} />
-            <Route path="cancel" element={<Cancel />} S/>
+            <Route path="cancel" element={<Cancel />} />
           </Routes>
         </BrowserRouter>
       </Container>
     </CartProvider>
-
   );
 }
 

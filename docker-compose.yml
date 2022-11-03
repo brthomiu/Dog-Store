@@ -3,6 +3,7 @@ version: "3"
 services:
     # Create backend container
   backend:
+    image: brthomiu/online-storefront-backend
     build: ./
     ports:
       - "4000:4000"
@@ -13,6 +14,7 @@ services:
 
   # Create frontend container
   frontend: # Name of our service
+    image: brthomiu/online-storefront-frontend
     build: ./stripestore # path to dockerfile
     ports: # Port binding to host from docker container
       - "3000:3000" # Bind port 3000 of host to 3000 of container
