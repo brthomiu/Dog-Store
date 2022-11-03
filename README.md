@@ -6,7 +6,7 @@ Online storefront created with React, Node, Express, and Stripe.
 ### Docker Compose file included to build containers for frontend & backend
 ### $ docker compose up 
 
-<img src="/stripestore/assets/dogStoreGif.gif" alt="Dog Store">
+<img src="/stripestore/src/assets/dogStoreGif.gif" alt="Dog Store">
 
 ## Frontend
 
